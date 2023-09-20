@@ -1317,3 +1317,54 @@ section .container {
 }
 
 
+/* Styles for the collapsible container */
+.collapsible-container {
+    max-height: 350px; /* Set a maximum height for the container */
+    overflow-y: auto; /* Enable vertical scrolling when necessary */
+    padding: 15px 15px 15px 15px;
+
+     /* Hide the scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -webkit-scrollbar-width: none; /* Webkit (Chrome, Safari, etc.) */
+}
+
+/* Hide the scrollbar thumb (track will remain visible) */
+.collapsible-container::-webkit-scrollbar {
+    width: 0.5em; /* Adjust as needed */
+}
+
+.collapsible-container::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Hide thumb */
+}
+
+/* Styles for the collapsible content */
+.collapsible {
+    max-height: 0; /* Initially hide the content */
+    overflow: hidden;
+    padding: 0 10px; /* Add padding for spacing */
+}
+
+/* Style the expand/collapse button with a plus sign */
+.resume-item .toggle-button::after {
+    content: "+"; /* Plus sign (+) as the toggle icon */
+    float: right;
+    cursor: pointer;
+}
+
+/* Style the button when content is expanded */
+.resume-item.expanded .toggle-button::after {
+    content: "-"; /* Minus sign (-) when content is expanded */
+}
+
+/* Toggle the visibility of the collapsible content and add cursor pointer on text */
+.resume-item .toggle-button:hover{
+    color: white; /* Change color on hover */
+    cursor: pointer; /* Add cursor pointer */
+}
+
+/* Add animation for smoother transition */
+.collapsible {
+    transition: max-height 0.3s ease-out;
+}
+
+
