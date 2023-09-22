@@ -883,8 +883,8 @@ section .container {
   z-index: 9994;
 }*/
 
-.img-fluid {
-  height: 140px;
+.img-side {
+  height: 110px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -1368,6 +1368,48 @@ section .container {
   margin-left: -15px;
 }
 
+/*
+Password Hide or Show*/
+.password {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    top: 6px;
+}
 
+.password::after {
+    content: '*******'; /* Default hidden password */
+    position: absolute;
+    top: ;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black; /* Match the background color */
+    pointer-events: none; /* Allows hover on the actual text */
+    z-index: 1; /* Place it above the actual text */
+    transition: background-color 0.3s;
+}
 
+.password:hover::after {
+    content: attr(data-password); /* Show password on hover */
+    background-color: transparent; /* Hide the background on hover */
+}
+
+/* Style for the left line */
+.english-ubuntu li {
+    position: relative;
+    padding-left: 10px; /* Adjust as needed for the desired line length */
+    margin-bottom: 10px; /* Adjust spacing between list items */
+}
+
+.english-ubuntu li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px; /* Adjust the line thickness as needed */
+    background-color: #007bff; /* Adjust the line color */
+}
 
